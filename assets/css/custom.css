@@ -1,0 +1,19 @@
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+	box-sizing: border-box;
+	display: inline-block;
+	min-width: 1.5em;
+	padding: 1px;
+	margin-left: 2px;
+	text-align: center;
+	text-decoration: none !important;
+	cursor: pointer;
+	color: #333 !important;
+	border: 1px solid transparent;
+	border-radius: 2px;
+}
+
+.box-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}

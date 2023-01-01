@@ -1,0 +1,5 @@
+__ci_last_regenerate|i:1672293591;errors|s:364:"<p>Unable to access an error message corresponding to your field name Store name required.(alpha_space_only)</p>
+<p>The Store phone number required field must be at least 11 characters in length.</p>
+<p>The Store email address required field must contain a valid email address.</p>
+<p>The Store address required field must be at least 10 characters in length.</p>
+";__ci_vars|a:2:{s:6:"errors";s:3:"old";s:9:"form_data";s:3:"old";}form_data|a:4:{s:10:"store_name";s:1:"d";s:11:"store_phone";s:1:"d";s:11:"store_email";s:1:"d";s:13:"store_address";s:1:"d";}

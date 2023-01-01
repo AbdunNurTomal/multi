@@ -1,0 +1,5 @@
+__ci_last_regenerate|i:1672293178;errors|s:220:"<p>The Store name required field is required.</p>
+<p>The Store phone number required field is required.</p>
+<p>The Store email address required field is required.</p>
+<p>The Store address required field is required.</p>
+";__ci_vars|a:2:{s:6:"errors";s:3:"old";s:9:"form_data";s:3:"old";}form_data|a:4:{s:10:"store_name";s:0:"";s:11:"store_phone";s:0:"";s:11:"store_email";s:0:"";s:13:"store_address";s:0:"";}
