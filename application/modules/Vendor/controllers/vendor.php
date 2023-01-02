@@ -24,6 +24,37 @@ class Vendor extends MY_Controller {
 		$result = $this->vm->get_vendor_by_id($vendor_id);
 		echo json_encode($result);
 	}
+	
+	function check_vendor_name_available(){
+		$vendor_name = $this->input->get('vendor_name');
+		$result = array();
+		if(check_vendor_exist($vendor_name,"vendor_name")!=false){
+			$result = array('error_message' => 'Vendor Name already exist..');
+		}else{
+			$result = array('error_message' => '');
+		}
+		echo json_encode($result);
+	}
+	function check_vendor_email_available(){
+		$vendor_email = $this->input->get('vendor_email');
+		$result = array();
+		if(check_vendor_exist($vendor_email,"vendor_email")!=false){
+			$result = array('error_message' => 'Vendor Email already exist..');
+		}else{
+			$result = array('error_message' => '');
+		}
+		echo json_encode($result);
+	}
+	function check_vendor_phone_available(){
+		$vendor_phone = $this->input->get('vendor_phone');
+		$result = array();
+		if(check_vendor_exist($vendor_phone,"vendor_phone")!=false){
+			$result = array('error_message' => 'Vendor Phone already exist..');
+		}else{
+			$result = array('error_message' => '');
+		}
+		echo json_encode($result);
+	}
 
 	function create_update_vendor(){
 		$vendor_btn = $this->input->post('vendor_btn', true);

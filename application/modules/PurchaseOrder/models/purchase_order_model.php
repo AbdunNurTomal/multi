@@ -55,27 +55,26 @@ class Purchase_order_model extends CI_Model {
 					 ->get()->result();
 					 
 		$result = array();
-		foreach($data as $row){
-			$result = array(
-						'purchase_order_id' => $row->purchase_order_id,
-						'item_name' => $row->item_name,
-						'item_quantity' => $row->item_quantity,
-						'unit_price' => $row->unit_price,
-						'total_price' => $row->total_price,
-					);
-		}
-		//$str = $this->db->last_query(); echo $str;exit;
-		//if($data->num_rows>0){
-		//	return true;
+		//if ($query->num_rows() > 0)]{
+		//	foreach ($query->result() as $row){
+		//		$result = array(
+		//			'purchase_order_id' => $row->purchase_order_id,
+		//			'item_name' => $row->item_name,
+		//			'item_quantity' => $row->item_quantity,
+		//			'unit_price' => $row->unit_price,
+		//			'total_price' => $row->total_price,
+		//		);
+		//	}
 		//}
-		//$result=array(
-		//	'purchase_order_id' => $data->purchase_order_id,
-		//	'vendor_id' => $data->vendor_id,
-		//	'item_name' => $data->item_name,
-		//	'item_quantity' => $data->item_quantity,
-		//	'unit_price' => $data->unit_price,
-		//	'total_price' => $data->total_price,
-		//);
+			foreach($data as $row){
+				$result = array(
+							'purchase_order_id' => $row->purchase_order_id,
+							'item_name' => $row->item_name,
+							'item_quantity' => $row->item_quantity,
+							'unit_price' => $row->unit_price,
+							'total_price' => $row->total_price,
+						);
+			}
 		return $result;
 	}
  

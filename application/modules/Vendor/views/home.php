@@ -23,15 +23,15 @@
 				<div class="row">
 					<div class="form-group col-sm-4">
 						<label>Vendor&nbsp;Name&nbsp;:&nbsp;</label>
-						<input type="text" name="vendor_name" class="form-control form-input" placeholder="<?php echo "Name"; ?>" onblur="validate_name();" value="" required>
+						<input type="text" name="vendor_name" class="form-control form-input" placeholder="<?php echo "Name"; ?>" value="" required>
 					</div>
 					<div class="col-sm-4">
 						<label>Vendor&nbsp;Phone&nbsp;:&nbsp;</label>
-						<input type="phone" name="vendor_phone" class="form-control form-input" placeholder="<?php echo "Phone Number"; ?>" onblur="validate_phone();" value="" required>
+						<input type="phone" name="vendor_phone" class="form-control form-input" placeholder="<?php echo "Phone Number"; ?>" value="" required>
 					</div>
 					<div class="col-sm-4">
 						<label>Vendor&nbsp;Email&nbsp;:&nbsp;</label>
-						<input type="email" name="vendor_email" class="form-control form-input" placeholder="<?php echo "Email"; ?>" onblur="validate_email();" value="" required>
+						<input type="email" name="vendor_email" class="form-control form-input" placeholder="<?php echo "Email"; ?>" value="" required>
 					</div>
 				</div>
 				<div class="row">

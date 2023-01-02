@@ -23,6 +23,7 @@ class Vendor_model extends CI_Model {
 	
 	function get_vendor_by_id($vendor_id){
 		$data = $this->db->get_where($this->vendor, array('vendor_id' => $vendor_id))->row();
+		
 		$result=array(
 			'vendor_id' => $data->vendor_id,
 			'vendor_name' => $data->vendor_name,
@@ -31,6 +32,25 @@ class Vendor_model extends CI_Model {
 			'vendor_address' => $data->vendor_address,
 		);
 		return $result;
+	}
+	
+	function check_vendor_exist($vendor,$input_field){
+		$result = $this->db->get_where($this->vendor, array($input_field => $vendor))->result();
+		
+		if (!empty($result)) {
+			foreach ($result as $value) {
+				$data=array(
+					'vendor_id' => $value->vendor_id,
+					'vendor_name' => $value->vendor_name,
+					'vendor_phone' => $value->vendor_phone,
+					'vendor_email' => $value->vendor_email,
+					'vendor_address' => $value->vendor_address,
+				);
+			}
+			return $data;
+		} else {
+			return false;
+		}
 	}
  
     function add_vendor($data){

@@ -41,7 +41,11 @@ $(document).ready(function(){
 						$('[name="vendor_address"]').val(data.vendor_address);
 						$('[name="vendor_form_btn"]').val("edit").text("Edit Vendor");
 					});
-				}
+				},
+				//error: function(jqXHR, textStatus, errorThrown) {
+				//	$('#msg').show();
+				//	$("#msg").html(textStatus + " " + errorThrown);
+				//}
 			});
 			return false;
 		}else{

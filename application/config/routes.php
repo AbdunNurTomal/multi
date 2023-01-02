@@ -57,6 +57,9 @@ $route['store/vendor'] = 'vendor/vendor_list';
 $route['store/get-vendor']['GET'] = 'vendor/get_vendor_data';
 $route['store/update-vendor']['POST'] = 'vendor/create_update_vendor';
 $route['store/delete-vendor']['POST'] = 'vendor/delete_vendor_by_id';
+$route['store/get-vendor-name-availability']['GET'] = 'vendor/check_vendor_name_available';
+$route['store/get-vendor-email-availability']['GET'] = 'vendor/check_vendor_email_available';
+$route['store/get-vendor-phone-availability']['GET'] = 'vendor/check_vendor_phone_available';
 
 
 $route['store/purchase-order'] = 'purchaseorder';
