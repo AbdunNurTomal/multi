@@ -62,7 +62,8 @@ $(document).ready(function(){
 	//Create Update vendor***
 	$('#form_new_vendor_data').on('submit', function(e){
 		e.preventDefault();
-
+		$('[name="vendor_form_btn"]').prop('disabled', true); // disable button
+		
 		var vendor_id = $('[name="vendor_id"]').val();
 		var vendor_name = $('[name="vendor_name"]').val();
 		var vendor_phone = $('[name="vendor_phone"]').val();
@@ -89,8 +90,9 @@ $(document).ready(function(){
 				dataType : "JSON",
 				data : form_data,
 				success: function(data){
-					if($.isEmptyObject(data.error)){
-						$(".print-error-msg").css('display','none');
+					//for server side validation***
+					//if($.isEmptyObject(data.error)){
+					//	$(".print-error-msg").css('display','none');
 						$('[name="vendor_id"]').val("");
 						$('[name="vendor_name"]').val("");
 						$('[name="vendor_phone"]').val("");
@@ -98,10 +100,11 @@ $(document).ready(function(){
 						$('[name="vendor_address"]').val("");
 						$('[name="vendor_form_btn"]').val("add").text("Add Vendor");
 						$('#vendorData').DataTable().ajax.reload();
-					}else{
-						$(".print-error-msg").css('display','block');
-						$(".print-error-msg").html(data.error);
-					}
+						$('[name="vendor_form_btn"]').prop('disabled', false);
+					//}else{
+					//	$(".print-error-msg").css('display','block');
+					//	$(".print-error-msg").html(data.error);
+					//}
 				}
 			});
 			return false;
@@ -135,12 +138,13 @@ $(document).ready(function(){
 						$(".print-warning-msg").css('display','none');
 						$(".print-error-msg").css('display','block');
 						$(".print-error-msg").html(data.error_message);
+						$('#btn_delete').prop('disabled', true);
 					}
 				}
 			});
 			return false;
 		}else{
-			console.log("vendor Information Delete Nothing");
+			console.log("Vendor Information Delete Nothing");
 		}
 	});
 	

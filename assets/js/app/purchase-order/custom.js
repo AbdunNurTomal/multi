@@ -62,7 +62,8 @@ $(document).ready(function(){
 	//Create Update vendor***
 	$('#form_new_purchase_order_data').on('submit', function(e){
 		e.preventDefault();
-
+		$('[name="purchase_order_form_btn"]').prop('disabled', true); // disable button
+		
 		var purchase_order_id = $('[name="purchase_order_id"]').val();
 		var vendor_id = $('[name="vendor_id"]').find("option:selected").val();
 		var item_name = $('[name="item_name"]').val();
@@ -91,19 +92,15 @@ $(document).ready(function(){
 				dataType : "JSON",
 				data : form_data,
 				success: function(data){
-					if($.isEmptyObject(data.error)){
-						$(".print-error-msg").css('display','none');
-						$('[name="vendor_id"]').val("").change();
-						$('[name="item_name"]').val("");
-						$('[name="item_quantity"]').val("");
-						$('[name="unit_price"]').val("");
-						$('[name="total_price"]').val("");
-						$('[name="purchase_order_form_btn"]').val("add").text("Add Purchase Order");
-						$('#purchaseOrderData').DataTable().ajax.reload();
-					}else{
-						$(".print-error-msg").css('display','block');
-						$(".print-error-msg").html(data.error);
-					}
+					$(".print-error-msg").css('display','none');
+					$('[name="vendor_id"]').val("").change();
+					$('[name="item_name"]').val("");
+					$('[name="item_quantity"]').val("");
+					$('[name="unit_price"]').val("");
+					$('[name="total_price"]').val("");
+					$('[name="purchase_order_form_btn"]').val("add").text("Add Purchase Order");
+					$('#purchaseOrderData').DataTable().ajax.reload();
+					$('[name="purchase_order_form_btn"]').prop('disabled', false); // enable button
 				}
 			});
 			return false;
@@ -129,8 +126,9 @@ $(document).ready(function(){
 				dataType : "JSON",
 				data : form_data,
 				success: function(data){
-						$('#purchase_order_modal').modal('hide');
-						$('#purchaseOrderData').DataTable().ajax.reload();
+					$('#purchase_order_modal').modal('hide');
+					$('#purchaseOrderData').DataTable().ajax.reload();
+					$('#btn_delete').prop('disabled', true);
 				}
 			});
 			return false;

@@ -1,0 +1,13 @@
+.DS_Store
+
+application/cache/temp/*
+!application/cache/index.html
+
+application/logs/*
+!application/logs/index.html
+
+!application/*/.htaccess
+
+composer.lock
+
+/vendor/
