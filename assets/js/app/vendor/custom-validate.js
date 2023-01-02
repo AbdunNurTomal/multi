@@ -11,9 +11,8 @@ $(document).ready(function() {
 			}
 		}else {
 			$('input[name="vendor_name"] + div.alert.alert-danger').remove();
-			var vendor_name = $('[name="vendor_name"]').val();
 			var form_data = {
-				vendor_name: vendor_name
+				vendor_name: name
 			};
 			form_data[csfr_token_name] = $.cookie(csfr_cookie_name);
 			
@@ -51,9 +50,8 @@ $(document).ready(function() {
 			}
 		}else{
 			$('input[name="vendor_email"] + div.alert.alert-danger').remove();
-			var vendor_email = $('[name="vendor_email"]').val();
 			var form_data = {
-				vendor_email: vendor_email
+				vendor_email: email
 			};
 			form_data[csfr_token_name] = $.cookie(csfr_cookie_name);
 			
@@ -91,9 +89,8 @@ $(document).ready(function() {
 			}
 		}else{
 			$('input[name="vendor_phone"] + div.alert.alert-danger').remove();
-			var vendor_phone = $('[name="vendor_phone"]').val();
 			var form_data = {
-				vendor_phone: vendor_phone
+				vendor_phone: phone_no
 			};
 			form_data[csfr_token_name] = $.cookie(csfr_cookie_name);
 			

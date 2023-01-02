@@ -1,7 +1,4 @@
-<?php
-
-(defined('BASEPATH')) OR exit('No direct script access allowed');
-
+<?php (defined('BASEPATH')) OR exit('No direct script access allowed');
 
 class Purchase_order_model extends CI_Model {
 
@@ -53,19 +50,8 @@ class Purchase_order_model extends CI_Model {
 					 ->join('vendor v', 'v.vendor_id = po.vendor_id')
 					 ->where('v.vendor_id', $vendor_id)
 					 ->get()->result();
-					 
-		$result = array();
-		//if ($query->num_rows() > 0)]{
-		//	foreach ($query->result() as $row){
-		//		$result = array(
-		//			'purchase_order_id' => $row->purchase_order_id,
-		//			'item_name' => $row->item_name,
-		//			'item_quantity' => $row->item_quantity,
-		//			'unit_price' => $row->unit_price,
-		//			'total_price' => $row->total_price,
-		//		);
-		//	}
-		//}
+		//$str = $this->db->last_query(); echo $str;exit;
+		if (!empty($data)) {
 			foreach($data as $row){
 				$result = array(
 							'purchase_order_id' => $row->purchase_order_id,
@@ -75,8 +61,11 @@ class Purchase_order_model extends CI_Model {
 							'total_price' => $row->total_price,
 						);
 			}
-		return $result;
-	}
+			return $result;
+		} else {
+			return false;
+		}
+	}	
  
     function add_purchase_order($data){
 		return $this->db->insert($this->po, $data);

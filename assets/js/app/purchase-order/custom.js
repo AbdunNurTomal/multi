@@ -51,7 +51,6 @@ $(document).ready(function(){
 		}
 	});
 
-
 	//GET***
 	$('#show_data').on('click','.item_delete',function(){
 		var id=$(this).attr('data');
@@ -141,6 +140,7 @@ $(document).ready(function(){
 	$('input[name="unit_price"]').on('keyup',calculate_total_price);
 	
 	$("#resset_purchase_order_form").on('click',purchase_order_form_clear);
+	
 });
 
 function purchase_order_form_clear(){

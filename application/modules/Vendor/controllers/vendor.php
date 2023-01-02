@@ -77,10 +77,10 @@ class Vendor extends MY_Controller {
 	function delete_vendor_by_id(){
 		$vendor_id = $this->input->post('vendor_id');
 		$result = array();
-		if(count(check_purchase_order_exist($vendor_id))>0){
-			$result = array('error_message' => 'Purchase Order Exist..you can not delete this vendor');
-		}else{
+		if(check_purchase_order_exist($vendor_id)==false){
 			$result = $this->vm->delete_vendor($vendor_id);
+		}else{
+			$result = array('error_message' => 'Purchase Order Exist..you can not delete this vendor');
 		}
 		echo json_encode($result);
 	}

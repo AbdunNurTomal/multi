@@ -58,6 +58,7 @@ $(document).ready(function(){
 	$('#show_data').on('click','.item_delete',function(){
 		var id = $(this).attr('data');
 		$('#vendor_modal').modal('show');
+		$('#btn_delete').prop('disabled', false); // enable button
 		$(".print-error-msg").css('display','none');
 		$(".print-warning-msg").css('display','block');
 		$('[name="vendor_id_for_delete"]').val(id);
@@ -153,6 +154,10 @@ $(document).ready(function(){
 	});
 	
 	$("#reset_vendor_form").on('click',vendor_form_clear);
+	
+	$('#vendor_modal').on('modalclosed', function() {
+		$('#btn_delete').prop('disabled', false); // enable button
+	});
 });
 
 function vendor_form_clear(){
